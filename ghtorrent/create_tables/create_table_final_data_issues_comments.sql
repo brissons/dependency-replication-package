@@ -1,0 +1,5 @@
+create table dependencies.final_data_issues_comments as
+select ghtorrent_restore.issue_comments.* 
+from dependencies.final_data_issues
+join ghtorrent_restore.issue_comments
+on ghtorrent_restore.issue_comments.issue_id = dependencies.final_data_issues.id
