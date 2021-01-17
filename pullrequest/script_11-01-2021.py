@@ -11,13 +11,13 @@ from colorama import Fore, Back, Style
 import zlib
 
 g_counter = 0
-username = ['ali-aliabadi', 'sara493', 'farhad113', 'Morteza', 'soghac']
+username = [ 'sara493', 'farhad113', 'soghac']
 password = [
     '21311192798e35540d4cb5e8cf4e38b3564e8176', '1ec5321da8587594e9b3b57d5f3e3896618972a2',
     'e2b103b09841617bb03c6a8e52bd3495734bd40c', '34f81dc00b6fc6d4e9f63b653d934955933c5a69',
     '32d38183b8cb191162fa6515d3f3c161228c0faf',
 ]
-g = Github(username[g_counter % 5], password[g_counter % 5])
+g = Github(username[g_counter % 3], password[g_counter % 3])
 
 
 class Repository:
