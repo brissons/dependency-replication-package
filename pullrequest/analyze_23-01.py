@@ -89,9 +89,9 @@ def analyze(repo_commit, parent_commit, parent_pull_request, parent_pull_request
         for j in range(len_parent_commit):
             pass
 
-    dict_total['counter'] = str(counter)
+    dict_total['counter'] = counter
     dict_total['percent'] = '{:.2f}%'.format(counter / len_repo_commits * 100)
-    dict_total['num_of_commits'] = str(len_repo_commits)
+    dict_total['num_of_commits'] = len_repo_commits
     return dict_total
 
 
