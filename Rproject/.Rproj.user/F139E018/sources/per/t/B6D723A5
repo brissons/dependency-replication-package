@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1601928622291.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B6D723A5",
+    "lastKnownWriteTime" : 3180141808686473843,
+    "last_content_update" : 1601928622291,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "F90FBBCB",
+        "caption" : "significant_jaccard_families90",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=significant_jaccard_families90&cache_key=F90FBBCB",
+        "displayedObservations" : 13,
+        "environment" : "",
+        "object" : "significant_jaccard_families90",
+        "preview" : 0,
+        "totalObservations" : 13,
+        "variables" : 1
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

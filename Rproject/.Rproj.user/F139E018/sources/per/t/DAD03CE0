@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1601928533084.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "DAD03CE0",
+    "lastKnownWriteTime" : 13229530067107888,
+    "last_content_update" : 1601928533084,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "5D69F7F5",
+        "caption" : "significant_activity_families30",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=significant_activity_families30&cache_key=5D69F7F5",
+        "displayedObservations" : 8,
+        "environment" : "",
+        "object" : "significant_activity_families30",
+        "preview" : 0,
+        "totalObservations" : 8,
+        "variables" : 1
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

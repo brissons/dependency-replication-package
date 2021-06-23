@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589922238698.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1306608970",
+    "id" : "2588F00",
+    "lastKnownWriteTime" : 1603839206,
+    "last_content_update" : 1603839206696,
+    "path" : "D:/RepositoriesESEM2020/Repositories/esem_analysis.R",
+    "project_path" : "esem_analysis.R",
+    "properties" : {
+        "cursorPosition" : "490,0",
+        "scrollLine" : "467",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
