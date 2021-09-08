@@ -1,7 +1,7 @@
 
 #======= Install Dependencies =============
 list.of.packages <-
-  c("ggplot2", "lubridate", "dplyr", "corrplot", "tidyverse", "flipTime", "remotes", "caret")
+  c("ggplot2", "lubridate", "dplyr", "corrplot", "tidyverse", "flipTime", "remotes", "caret", "car")
 
 # list any missing packages
 new.packages <-
@@ -17,7 +17,7 @@ lapply(list.of.packages, require, character.only = TRUE)
 #============= Import and Prepare Datasets =======================
 
 comm<-read.csv("Data/repos_comm.csv", header = T, stringsAsFactors = F)
-type<-read.csv("Data/repos_type.csv", header = T, stringsAsFactors = F)
+#type<-read.csv("Data/repos_type.csv", header = T, stringsAsFactors = F)
 
 repos<-read.csv("Data/repos.csv", header = T, stringsAsFactors = F)
 dep<-read.csv("Data/repos_dep.csv", header = T, stringsAsFactors = F)
@@ -291,7 +291,7 @@ for(i in unique(dataset2$parent_id)) {
   print(i)
   family<-dataset2[which(dataset2$parent_id==i),]
   
-  family<-family[-which(family$ALL=="Parent" | is.na(family$ALL)),]
+  family<-family[-which(family$ALL=="Parent" | is.na(family$ALL) | family$ALL=="Dead?"),]
   
   family$ALL<-factor(family$ALL)
   
@@ -332,9 +332,9 @@ for(i in unique(dataset2$parent_id)) {
   print(i)
   family<-dataset2[which(dataset2$parent_id==i),]
   
-  family<-family[-which(family$X0.75=="Parent" | is.na(family$X0.75)),]
+  family<-family[-which(family$X0.75=="Parent" | is.na(family$X0.75) | family$X0.75=="Dead?"),]
   
-  family$X0.7<-factor(family$X0.75)
+  family$X0.75<-factor(family$X0.75)
   
   if(length(levels(family$X0.75))==2) {
     test<-wilcox.test(new_jaccard~X0.75, data=family)
@@ -373,7 +373,7 @@ for(i in unique(dataset2$parent_id)) {
   print(i)
   family<-dataset2[which(dataset2$parent_id==i),]
   
-  family<-family[-which(family$X0.5=="Parent" | is.na(family$X0.5)),]
+  family<-family[-which(family$X0.5=="Parent" | is.na(family$X0.5) | family$X0.5=="Dead?"),]
   
   family$X0.5<-factor(family$X0.5)
   
@@ -405,6 +405,8 @@ length(significant_activity_families50)
 length(insignificant_activity_families50)
 length((onedimension_families50))
 
+
+
 significant_jaccard_families25<-c()
 insignificant_jaccard_families25<-c()
 significant_activity_families25<-c()
@@ -414,7 +416,7 @@ for(i in unique(dataset2$parent_id)) {
   print(i)
   family<-dataset2[which(dataset2$parent_id==i),]
   
-  family<-family[-which(family$X0.25=="Parent" | is.na(family$X0.25)),]
+  family<-family[-which(family$X0.25=="Parent" | is.na(family$X0.25) | family$X0.25=="Dead?"),]
   
   family$X0.25<-factor(family$X0.25)
   
@@ -455,7 +457,7 @@ for(i in unique(dataset2$parent_id)) {
   print(i)
   family<-dataset2[which(dataset2$parent_id==i),]
   
-  family<-family[-which(family$X1.Commit=="Parent" | is.na(family$X1.Commit)),]
+  family<-family[-which(family$X1.Commit=="Parent" | is.na(family$X1.Commit) | family$X1.Commit=="Dead?"),]
   
   family$X1.Commit<-factor(family$X1.Commit)
   
@@ -488,9 +490,14 @@ length(insignificant_activity_families1)
 length((onedimension_families1))
 
 common_families_jaccard<-union(significant_jaccard_familiesALL, significant_jaccard_families50)
-common_families_jaccard<-union(common_families_jaccard, significant_activity_families75)
-common_families_jaccard<-union(common_families_jaccard, significant_activity_families25)
-common_families_jaccard<-union(common_families_jaccard, significant_activity_families1)
+common_families_jaccard<-union(common_families_jaccard, significant_jaccard_families75)
+common_families_jaccard<-union(common_families_jaccard, significant_jaccard_families25)
+common_families_jaccard<-union(common_families_jaccard, significant_jaccard_families1)
+
+common_families_actvity<-union(significant_activity_familiesALL, significant_activity_families50)
+common_families_actvity<-union(common_families_actvity, significant_activity_families75)
+common_families_actvity<-union(common_families_actvity, significant_activity_families25)
+common_families_actvity<-union(common_families_actvity, significant_activity_families1)
 
 # ============ Test: Activity Density and Jaccard Distance vs Type =======================
 
