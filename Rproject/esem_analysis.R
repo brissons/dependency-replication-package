@@ -248,7 +248,7 @@ dataset2<-left_join(dataset, type, by=c("repo_id", "parent_id"))
 
 # ================= Type comparison with ICSE2020 =========================
 
-types_comb<-dataset2[,c(1,7,73:77)]
+types_comb<-dataset2[,c(1,7,72:76)]
 types_comb<-types_comb %>% filter(X1.Commit %in% c("Social", "Hard")) %>% filter(X0.25 %in% c("Social", "Hard")) %>% filter(X0.75 %in% c("Social", "Hard")) %>% filter(X0.5 %in% c("Social", "Hard")) %>% filter(ALL %in% c("Social", "Hard"))
 types_comb[which(types_comb$is_hard_fork==0),]$is_hard_fork<-"Social"
 types_comb[which(types_comb$is_hard_fork==1),]$is_hard_fork<-"Hard"
